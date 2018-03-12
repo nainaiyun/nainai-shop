@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>登记</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" />
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<style>
+			tr:hover td {
+				background-color: #eee;
+			}
+			
+			.margin-l {
+				margin-left: 10px;
+			}
+			
+			.margin-t {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+
+	<body ng-app="myApp" ng-controller="myCtrl">
+		<h1 class="text-center margin-t">
+			登记表
+		</h1>
+		<div class="container margin-t">
+			<button class="btn btn-default pull-right margin-l">搜索</button>
+			<form class="form-inline pull-right margin-l">
+				<div class="form-group">
+					<input type="text" ng-change="sendSearch()" class="form-control" ng-model="keywords" placeholder="请输入搜索关键字" />
+				</div>
+			</form>
+			<button class="btn btn-success pull-right" data-toggle="modal" data-target="#myModal" ng-click="add()">添加</button>
+		</div>
+		<div class="container margin-t">
+			<div class="row">
+				<div class="col-sm-12">
+					<table class="table text-center table-hover">
+						<thead>
+							<tr>
+								<th class="text-center">序号</th>
+								<th class="text-center">用户名</th>
+								<th class="text-center">公司名称</th>
+								<th class="text-center">商品名称</th>
+								<th class="text-center">价格</th>
+								<th class="text-center">投标时间</th>
+								<th class="text-center">联系人</th>
+								<th class="text-center">手机号码</th>
+								<th class="text-center">备注</th>
+								<th class="text-center">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in data.list" ng-cloak>
+								<td>{{item.id}}</td>
+								<td>{{item.username}}</td>
+								<td>{{item.corporatename}}</td>
+								<td>{{item.commodityname}}</td>
+								<td>{{item.price}}</td>
+								<td>{{item.bidtime}}</td>
+								<td>{{item.contacts}}</td>
+								<td>{{item.mobile}}</td>
+								<td>{{item.remarks}}</td>
+								<td>
+									<button class="btn btn-primary" ng-click="edit($index)" data-toggle="modal" data-target="#myModal">编辑</button>
+									<button class="btn btn-danger" ng-click="del($index)">删除</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<model-edit ng-if="isEdit"></model-edit>
+							<model-add ng-if="!isEdit"></model-edit>
+						</div>
+					</div>
+					<ul class="pager">
+						<li class="previous" ng-click="searchPre()" ng-class="{disabled: index==1}">
+							<a href="#">&larr; 上一页</a>
+						</li>
+						<li class="next" ng-click="searchNext()" ng-class="{disabled: index>=maxPage}">
+							<a href="#">下一页 &rarr;</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			angular.module('myApp', [])
+				.directive("modelEdit", function() {
+					return {
+						template: `<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title text-center" id="myModalLabel">
+										编辑
+									</h4>
+								</div>
+								<div class="modal-body">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">序号</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" disabled ng-model="showThis.id">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">用户名</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="showThis.username" placeholder="请输入用户名">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="lastname" class="col-sm-2 control-label">公司名称</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="showThis.corporatename" placeholder="请输入公司名称">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">商品名称</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="showThis.commodityname" placeholder="请输入商品名称">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="lastname" class="col-sm-2 control-label">价格</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="showThis.price" placeholder="请输入价格">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">联系人</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="showThis.contacts" placeholder="请输入联系人">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="lastname" class="col-sm-2 control-label">手机号码</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="showThis.mobile" placeholder="请输入手机号码">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">备注</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="showThis.remarks">
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+									<button type="button" ng-click="sendChange()" class="btn btn-primary">提交</button>
+								</div>
+							</div>`
+					}
+				})
+				.directive("modelAdd", function() {
+					return {
+						template: `<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title text-center" id="myModalLabel">
+										添加
+									</h4>
+								</div>
+								<div class="modal-body">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">用户名</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="addData.username" placeholder="请输入用户名">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="lastname" class="col-sm-2 control-label">公司名称</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="addData.corporatename" placeholder="请输入公司名称">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">商品名称</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="addData.commodityname" placeholder="请输入商品名称">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="lastname" class="col-sm-2 control-label">价格</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="addData.price" placeholder="请输入价格">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">联系人</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="addData.contacts" placeholder="请输入联系人">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="lastname" class="col-sm-2 control-label">手机号码</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control" ng-model="addData.mobile" placeholder="请输入手机号码">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="firstname" class="col-sm-2 control-label">备注</label>
+											<div class="col-sm-10">
+												<input type="text" ng-model="addData.remarks" class="form-control">
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+									<button type="button" class="btn btn-primary" ng-click="sendAdd()">提交</button>
+								</div>
+							</div>`
+					}
+
+				})
+				.controller("myCtrl", ["$scope", "$http", function($scope, $http) {
+					$scope.data = {};
+					$scope.addData = {};
+					$scope.searchData = {};
+					$scope.showThis = {};
+					$scope.index = 1;
+					$scope.maxPage = null;
+					$scope.isEdit = false;
+					$scope.keywords = "";
+					$scope.edit = function(index) {
+						$scope.isEdit = true;
+						$scope.showThis = $scope.data.list[index];
+					};
+					$scope.add = function() {
+						$scope.isEdit = false;
+					};
+					$scope.del = function(index) {
+					    console.log("aaa")
+						if(confirm("是否确定删除此条数据？")) {
+							$http({
+								method: 'POST',
+								url: '/transactionrecord/delete',
+								params: {
+									id: $scope.data.list[index].id
+								}
+							}).success(function(res){
+								$scope.getData($scope.index);
+							}).error(function(err){
+								alert("删除失败，可能是网络原因，请稍后重试！");
+							})
+							} else {
+							return;
+						}
+					};
+
+					// $scope.time = new Date(item.bidtime);
+					// new Data(item.bidtime).getFullYear() + new Data(item.bidtime).getMonth() + new Data(item.bidtime).getDate() + new Data(item.bidtime).getHours() + new Data(item.bidtime).getMinutes() + new Data(item.bidtime).getSeconds()
+
+
+
+                    $scope.sendAdd = function() {
+						$http({
+                            method: 'POST',
+                            url: '/transactionrecord/setinsert',
+                            params: {
+                            	username: $scope.addData.username,
+                            	corporatename: $scope.addData.corporatename,
+                            	commodityname: $scope.addData.commodityname,
+                            	price: $scope.addData.price,
+                            	contacts: $scope.addData.contacts,
+                            	mobile: $scope.addData.mobile,
+                            	remarks: $scope.addData.remarks
+                            }
+                        }).success(function(res) {
+                            $scope.getData($scope.index);
+                            $("#myModal").modal('hide');
+                            $scope.addData = {};
+                        }).error(function(err) {
+                        	alert("添加出现错误，请稍后重试！");
+                        })
+					};
+					$scope.sendChange = function() {
+						$http({
+							method: 'POST',
+							url: '/transactionrecord/update',
+							params: {
+							    id:$scope.showThis.id,
+								username: $scope.showThis.username,
+                            	corporatename: $scope.showThis.corporatename,
+                            	commodityname: $scope.showThis.commodityname,
+                            	price: $scope.showThis.price,
+                            	contacts: $scope.showThis.contacts,
+                            	mobile: $scope.showThis.mobile,
+                            	remarks: $scope.showThis.remarks
+							}
+						}).success(function(res) {
+							$("#myModal").modal('hide');
+							$scope.getData();
+							$scope.showThis = {};
+						}).error(function(err){
+							alert("修改出现错误，请稍后重试！");
+						})
+					};
+					$scope.sendSearch = function() {
+						$http({
+							method: 'POST',
+							url: '/transactionrecord/like',
+							params: {
+								likename: $scope.keywords
+							}
+						}).success(function(res){
+							$scope.data = res;
+
+                            angular.forEach(res.list,function(data,index,arr){
+                                var time = new Date(arr[index].bidtime);
+                                var house,minutes,second;
+                                if(time.getHours() < 10){
+                                    house = "0" + time.getHours();
+                                }else{
+                                    house = time.getHours();
+                                }
+                                if(time.getMinutes() < 10){
+                                    minutes = "0" + time.getMinutes();
+                                }else{
+                                    minutes = time.getMinutes();
+                                }
+                                if(time.getSeconds() < 10){
+                                    second = "0" + time.getSeconds();
+                                }else{
+                                    second = time.getSeconds();
+                                }
+                                var showTime = time.getFullYear() + "-" + time.getMonth() + "-" + time.getDate() + " " + house + ":" + minutes + ":" + second;
+                                $scope.data.list[index].bidtime = showTime;
+                            })
+						}).error(function(err){
+							alert("查找失败，可能是网络原因，请稍后重试！");
+						})
+					};
+					$scope.getData = function(n) {
+                        $http({
+                            method: 'POST',
+                            url: '/transactionrecord/getall',
+                            params: {pn:n}
+                        }).success(function(res) {
+                            $scope.data = res;
+
+                            angular.forEach(res.list,function(data,index,arr){
+                                var time = new Date(arr[index].bidtime);
+                               	var house,minutes,second;
+                                if(time.getHours() < 10){
+									house = "0" + time.getHours();
+								}else{
+                                    house = time.getHours();
+								}
+                                if(time.getMinutes() < 10){
+                                    minutes = "0" + time.getMinutes();
+                                }else{
+                                    minutes = time.getMinutes();
+								}
+                                if(time.getSeconds() < 10){
+                                    second = "0" + time.getSeconds();
+                                }else{
+                                    second = time.getSeconds();
+								}
+                                var showTime = time.getFullYear() + "-" + time.getMonth() + "-" + time.getDate() + " " + house + ":" + minutes + ":" + second;
+                                $scope.data.list[index].bidtime = showTime;
+							})
+                            $scope.maxPage = res.pages;
+                        })
+                    };
+                    $scope.searchNext = function() {
+
+                    	if($scope.index >= $scope.maxPage){
+                    	    return;
+						}else{
+                            $scope.index++;
+                            $scope.getData($scope.index);
+						}
+
+                    }
+                    $scope.searchPre = function() {
+                    	$scope.index--;
+                    	if($scope.index <= 1){
+                    	    $scope.index = 1;
+                    	    return;
+						}
+                    	$scope.getData($scope.index);
+                    }
+                    $scope.sendDel = function(index) {
+
+					};
+					$scope.getData($scope.index);
+				}])
+		</script>
+	</body>
+
+</html>

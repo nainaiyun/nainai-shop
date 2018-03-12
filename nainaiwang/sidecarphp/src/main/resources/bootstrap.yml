@@ -1,0 +1,24 @@
+spring:
+  application:
+      name: sidecarphp
+  cloud:
+      config:
+          label: master
+          profile: dev
+          username: yanhaopeng
+          password: 123456
+          discovery:
+              service-id: configserver
+              enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+      register-with-eureka: true
+      fetch-registry: true
+  instance:
+        # 续约更新时间间隔（默认30秒）
+      lease-renewal-interval-in-seconds: 10
+        # 续约到期时间（默认90秒）
+      lease-expiration-duration-in-seconds: 30

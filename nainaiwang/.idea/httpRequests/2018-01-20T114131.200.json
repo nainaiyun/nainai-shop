@@ -1,0 +1,6 @@
+{
+  "code": "400",
+  "data": null,
+  "message": "\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'productsId' in 'field list'\n### The error may exist in com/nainai/mapper/ShopSpreadMapper.java (best guess)\n### The error may involve com.nainai.mapper.ShopSpreadMapper.selectShopSpreadPicturePathByShopId-Inline\n### The error occurred while setting parameters\n### SQL: select id,productsId,picturePath from shop_spread where shop_id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'productsId' in 'field list'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'productsId' in 'field list'",
+  "time": "2018-01-20 23:41:31"
+}

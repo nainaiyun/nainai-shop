@@ -1,0 +1,85 @@
+{
+  "code": "200",
+  "data": [
+    {
+      "shopSpreads": [
+        {
+          "picture_path": "/use/lo",
+          "products_id": "1",
+          "id": "1",
+          "offer_id": "1"
+        },
+        {
+          "picture_path": "/use/lo",
+          "products_id": "2",
+          "id": "2",
+          "offer_id": "2"
+        },
+        {
+          "picture_path": "/use/lo",
+          "products_id": "3",
+          "id": "3",
+          "offer_id": "3"
+        }
+      ],
+      "shopInfos": {
+        "introduce": "aads",
+        "updateTime": 1466057435000,
+        "operatingAddress": "湖南",
+        "sort": 1,
+        "synopsis": "dfdsas",
+        "userId": 1,
+        "mainSupplies": "aadsd",
+        "mainProject": "asddsd",
+        "createTime": 1466057435000,
+        "name": "颜浩鹏的店铺",
+        "logo": "/user/loge",
+        "contactAddress": "长沙",
+        "id": "1",
+        "remarks": "ddsdsd",
+        "authentication": 1
+      }
+    },
+    {
+      "shopSpreads": [
+        {
+          "picture_path": "/use/lo",
+          "products_id": "4",
+          "id": "4",
+          "offer_id": "4"
+        },
+        {
+          "picture_path": "/use/lo",
+          "products_id": "5",
+          "id": "5",
+          "offer_id": "5"
+        },
+        {
+          "picture_path": "/use/lo",
+          "products_id": "6",
+          "id": "6",
+          "offer_id": "6"
+        }
+      ],
+      "shopInfos": {
+        "introduce": "aads",
+        "updateTime": 1466057435000,
+        "operatingAddress": "河南",
+        "sort": 1,
+        "synopsis": "dfdsas",
+        "userId": 2,
+        "mainSupplies": "aadsd",
+        "mainProject": "asddsd",
+        "createTime": 1466057435000,
+        "name": "黄正鹏的店铺",
+        "logo": "/user/loge",
+        "contactAddress": "商丘",
+        "id": "2",
+        "remarks": "ddsdsd",
+        "authentication": 1
+      }
+    }
+  ],
+  "message": "SUCCESS",
+  "time": "2018-01-22 14:02:46"
+}

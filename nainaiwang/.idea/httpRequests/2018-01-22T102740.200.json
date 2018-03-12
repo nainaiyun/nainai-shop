@@ -1,0 +1,41 @@
+{
+  "code": "200",
+  "data": {
+    "shopSpreads": [
+      {
+        "picture_path": "/use/lo",
+        "products_id": "7",
+        "id": "7"
+      },
+      {
+        "picture_path": "/use/lo",
+        "products_id": "8",
+        "id": "8"
+      },
+      {
+        "picture_path": "/use/lo",
+        "products_id": "9",
+        "id": "9"
+      }
+    ],
+    "shopInfos": {
+      "introduce": "aads",
+      "updateTime": 1466057435000,
+      "operatingAddress": "山西",
+      "sort": 1,
+      "synopsis": "dfdsas",
+      "userId": 3,
+      "mainSupplies": "aadsd",
+      "mainProject": "asddsd",
+      "createTime": 1466057435000,
+      "name": "马建立的店铺",
+      "logo": "/user/loge",
+      "contactAddress": "阳泉",
+      "id": "3",
+      "remarks": "ddsdsd",
+      "authentication": 1
+    }
+  },
+  "message": "SUCCESS",
+  "time": "2018-01-22 10:27:39"
+}

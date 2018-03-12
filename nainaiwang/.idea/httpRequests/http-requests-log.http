@@ -1,0 +1,401 @@
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+{ 	"pageNum":1, 	"pageSize":2, 	"name":"" }
+
+<> 2018-01-22T024956.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3&name=
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+<> 2018-01-22T024209.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3&name=
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+<> 2018-01-22T024130.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3&name=
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T023621.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3&name=
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T023303.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T020246.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T013032.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T104319.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T103514.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T103206.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T102754.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T102740.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T101523.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T101343.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoAllPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T101011.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T100739.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T100344.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T095740.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T094952.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T093021.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T091848.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T091536.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoAllPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T091528.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoAllPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T090651.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoName?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-22T090611.404.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T114949.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T114426.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T114131.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T113617.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoAllPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T113606.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T113540.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T112511.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoAllPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T112457.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoAllPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T112249.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAll?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T112231.404.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAllPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T112217.404.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T111818.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T110013.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T105530.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T105446.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T105239.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-01-20T105100.200.json
+
+###
+
+POST http://localhost:8081/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=3
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-01-20T094821.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=1
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-01-20T094705.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=1
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-01-20T094155.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopInfoAllPage?pageNum=1&pageSize=1
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-01-20T094054.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=1
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-01-20T094024.200.json
+
+###
+
+POST http://localhost:8080/shopinfo/selectShopnfoAndSpreadPage?pageNum=1&pageSize=10
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-01-20T093735.200.json
+
+###
+
