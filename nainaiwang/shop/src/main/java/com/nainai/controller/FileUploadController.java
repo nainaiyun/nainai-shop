@@ -37,8 +37,10 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 public class FileUploadController {
     @Autowired
     public FastFileStorageClient fastFileStorageClient;
+
     /**
      * 上传单个文件
+     *
      * @param file
      * @return
      */
@@ -49,7 +51,9 @@ public class FileUploadController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public Result upload(@RequestParam("file") MultipartFile file) {
         //判断文件是否为空
-        if (file.isEmpty()) { return ResultGenerator.genFailResult("文件为空"); }
+        if (file.isEmpty()) {
+            return ResultGenerator.genFailResult("文件为空");
+        }
         // 获取文件名
         String fileName = file.getOriginalFilename();
         // 获取文件的后缀名
@@ -72,9 +76,9 @@ public class FileUploadController {
             file.transferTo(dest);
             //上传后输出上传成功的时间
             return ResultGenerator.genSuccessResult("/static/pictures/" + fileName);
-        }catch (IllegalStateException e) {
+        } catch (IllegalStateException e) {
             return ResultGenerator.genFailResult("文件过大,内存溢出异常");
-        }catch (IOException e) {
+        } catch (IOException e) {
             return ResultGenerator.genFailResult("文件路径错误,IO异常");
         }
 
@@ -104,6 +108,7 @@ public class FileUploadController {
 
     /**
      * 上传单个文件
+     *
      * @param file
      * @return
      */
@@ -133,15 +138,16 @@ public class FileUploadController {
         }
         try {
             file.transferTo(dest);
-            FileInputStream inputStream=new FileInputStream(dest);
+            FileInputStream inputStream = new FileInputStream(dest);
 
-            String strs= fileName.substring(fileName.lastIndexOf(".") + 1);  ;
-            if(!StringUtils.hasText(strs)){
+            String strs = fileName.substring(fileName.lastIndexOf(".") + 1);
+            ;
+            if (!StringUtils.hasText(strs)) {
                 return ResultGenerator.genFailResult("fail");
             }
-            StorePath storePath= fastFileStorageClient.uploadImageAndCrtThumbImage(inputStream,file.getSize(),strs,null);
-            System.out.println("path------"+storePath.getFullPath());
-            String path = "http://210.51.161.217:8088/"+storePath.getFullPath();
+            StorePath storePath = fastFileStorageClient.uploadImageAndCrtThumbImage(inputStream, file.getSize(), strs, null);
+            System.out.println("path------" + storePath.getFullPath());
+            String path = "http://210.51.161.217:8088/" + storePath.getFullPath();
             //上传后输出上传成功的时间
             return ResultGenerator.genSuccessResult(path);
         } catch (IllegalStateException e) {
@@ -152,14 +158,13 @@ public class FileUploadController {
     }
 
 
-
     /**
      * 多文件上传 主要是使用了MultipartHttpServletRequest和MultipartFile
      *
      * @param request
      * @return
      * @author
-     * @create 2017年3月11日
+     * @create 2018/1/14
      */
     @RequestMapping(value = "/upload/batch", method = RequestMethod.POST)
     public @ResponseBody
