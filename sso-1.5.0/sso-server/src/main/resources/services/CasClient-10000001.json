@@ -1,0 +1,10 @@
+{
+  "@class": "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^(https|imaps|http)://localhost:8080/front/*",
+  "name": "shop",
+  "id": 10000001,
+  "description": "shop service",
+  "evaluationOrder": 100,
+  "theme":"apereo",
+  "logoutUrl": "http://localhost:8080/"
+}
