@@ -90,18 +90,18 @@ Deploy resultant `target/cas.war`  to a servlet container of choice.
   * -keystore 指定密钥库存储位置，这里存在d盘
   * -dname 指定用户信息，不用一个一个回答它的问题了；
 
-  注意：CN=域名，我们采用`localhost`
+  注意：CN=域名，我们采用`passport.sso.com`
 
 1.
 ```cmd
-keytool -genkeypair -keyalg RSA -keysize 2048 -sigalg SHA1withRSA -validity 36500 -alias localhost -keystore d:/tomcat.keystore -dname "CN=localhost,OU=sunrizetech,O=esaleb,L=GuangZhou,ST=GuangDong,C=CN"
+keytool -genkeypair -keyalg RSA -keysize 2048 -sigalg SHA1withRSA -validity 36500 -alias passport.sso.com -keystore d:/tomcat.keystore -dname "CN=passport.sso.com,OU=sunrizetech,O=esaleb,L=GuangZhou,ST=GuangDong,C=CN"
 # 输入上述命令，下面密码我们输入 123456,然后一直回车，就在d盘生成了tomcat.keystore文件；
 ```
 
 2.导出数字证书
   在cmd下输入如下命令：
 ```cmd
-keytool -exportcert -alias localhost -keystore d:/tomcat.keystore  -file d:/tomcat.cer -rfc
+keytool -exportcert -alias passport.sso.com -keystore d:/tomcat.keystore  -file d:/tomcat.cer -rfc
 ```
 
 3.将服务端的证书tomcat.cer导入到客户端java的cacerts证书库中
@@ -109,7 +109,7 @@ cmd到 `${JAVA_HOME}jre\lib\security`
 
 运行如下命令：
 ```cmd
-keytool -import -alias localhost -keystore %JAVA_HOME%\jre\lib\security\cacerts -file d:/tomcat.cer -trustcacerts
+keytool -import -alias passport.sso.com -keystore %JAVA_HOME%\jre\lib\security\cacerts -file d:/tomcat.cer -trustcacerts
 # 密码为 changeit
 ```
 

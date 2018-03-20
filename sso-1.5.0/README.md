@@ -36,7 +36,7 @@
 * [Blog](http://blog.csdn.net/u010475041/article/category/7156505)
 * [Support](https://github.com/laomazi2006/sso/wiki)
 
-域名：localhost
+域名：passport.sso.com
 
 用户：
 

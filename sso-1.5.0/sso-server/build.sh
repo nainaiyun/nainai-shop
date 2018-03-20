@@ -3,10 +3,10 @@
 
 function copy() {
 	echo -e "Creating configuration directory under /etc/cas"
-	sudo mkdir -p /etc/cas/config
+	mkdir -p /etc/cas/config
 
 	echo -e "Copying configuration files from etc/cas to /etc/cas"
-	sudo cp -rfv etc/cas/* /etc/cas
+	cp -rfv etc/cas/* /etc/cas
 }
 
 function help() {
